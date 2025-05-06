@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Github</title>
+</head>
+<body>
+    <h1>List GitHub User</h1>
+    <input
+    type="text"
+    id="search"
+    placeholder="Search for Github user ..."/>
+
+</body>
+</html>
+<script>
+    let searchKeyword = document.getElementById("searchuser")
+    let apiKey =("https://api.themoviedb.org/3/search/movie?api_key=YOUR_API_KEY&query")
+    let searchTimer;
+    searchKeyword.addEventListener("input", debouncedSearch)
+    function debouncedSearch(){
+       searchTimer =  setTimeout(function(){
+            SearchUsers{};
+        }, 500);
+            
+
+        
+    }
+    function SearchUsers(){
+        const requestOptions = {
+            method: "GET",
+            header:{
+                   Authorization: 'token ${apiKey}',
+            },
+        }
+        fetch(
+            'https://api.github.com/search/users?q=${searchKeyword.value}',
+        requestOptions
+
+        );
+      
+    }
+
+    
+    </script>
