@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throtling </title>
+</head>
+<body>
+    <h1>List GitHub User</h1>
+    <input
+    type="text"
+    id="search"
+    placeholder="Search for Github user ..."/>
+
+</body>
+</html>
+<script>
+    let searchKeyword = document.getElementById("searchuser")
+    let apiKey =("https://picsum.photos/600/400?random")
+
+
+    let fireThrottled =true;
+    document.querySelector("button").addEventListener("click", throttledSearch)
+    function throttledSearch(){
+        if (fireThrottled) {
+            serchUsers();
+            fireThrottled = false;
+            setTimeout(function (){
+                fireThrottled = true;
+            }, 1000);
+
+            
+        }else console.log("chill chill loading it!!");
+       
+            
+
+        
+    }
+    function SearchUsers(){
+        const requestOptions = {
+            method: "GET",
+            header:{
+                   Authorization: 'token ${apiKey}',
+            },
+        }
+        fetch(
+            https://picsum.photos/600/400?random),
+
+    
+        requestOptions
+    }
+        
+
+    
+    
+    </script>
